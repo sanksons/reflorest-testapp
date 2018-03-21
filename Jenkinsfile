@@ -1,9 +1,17 @@
 pipeline {
-    agent any
+    agent {
+      dockerfile true
+    }
     stages {
-        stage('Stage1') {
+        stage('test') {
             steps {
-                echo "Running tutu"
+                echo "Running tests"
+            }
+        }
+        stage('deploy') {
+            steps {
+               echo "deploying"
+               sh 'reflorest deploy'
             }
         }
     }
