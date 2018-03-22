@@ -8,6 +8,16 @@ pipeline {
                 echo "Running tests"
             }
         }
+        stage('debug') {
+            steps {
+              echo "CWD:"
+              sh 'pwd'
+              echo "user:"
+              sh 'whoami'
+              echo "files:"
+              sh 'ls -lahrt' 
+            }
+        }
         stage('deploy') {
             steps {
                echo "deploying"
