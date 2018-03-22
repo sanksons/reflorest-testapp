@@ -13,7 +13,7 @@ RUN tar -C /usr/local -xzf go1.10.linux-amd64.tar.gz
 ENV PATH=$PATH:/usr/local/go/bin:/gospace/bin
 
 # Make gopath space
-RUN mkdir -p /gospace
+RUN mkdir -p /gospace && chmod 766 /gospace
 ENV GOPATH="/gospace"
 
 # Install reflorest cli
