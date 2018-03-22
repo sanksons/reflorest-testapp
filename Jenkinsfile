@@ -1,8 +1,10 @@
-pipeline {
+pipeline {i
+    
     agent {
-      dockerfile {
-        customWorkspace '/gospace/src/' 
-      }
+      dockerfile true
+    }
+    options {
+       skipDefaultCheckout()
     }
     stages {
         stage('test') {
