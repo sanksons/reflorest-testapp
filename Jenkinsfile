@@ -19,8 +19,8 @@ pipeline {
 			 sh 'mkdir -m 777 -p go/src/github.com/sanksons'
              dir('go/src/github.com/sanksons') {
                // take checkout
-               checkout changelog: false, poll: false, scm: [$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/sanksons/reflorest-testapp.git']]]
-             }
+			   sh 'git checkout https://github.com/sanksons/reflorest-testapp.git'
+              
 			 dir('go/src/github.com/sanksons/reflorest-testapp') {
 			   sh 'go install ./...'
 			 }
