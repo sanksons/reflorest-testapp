@@ -1,6 +1,8 @@
 pipeline {
     agent {
-      dockerfile true
+      dockerfile {
+        customWorkspace '/gospace/src/' 
+      }
     }
     stages {
         stage('test') {
@@ -8,14 +10,17 @@ pipeline {
                 echo "Running tests"
             }
         }
-        stage('debug') {
+        stage('prebuild') {
             steps {
+              echo "mkdir /gospace/src"
+              sh 'mkdir /gospace/src'
+              echo "copy application"
+              sh 'cp -r . /gospace/src/myapplication/*'
+              echo "change cwd"
+               
               echo "CWD:"
-              sh 'pwd'
-              echo "user:"
-              sh 'whoami'
-              echo "files:"
-              sh 'ls -lahrt' 
+              sh 'export GOPATH=$(pwd)'
+              echo "gopath is : $GOPATH"
             }
         }
         stage('deploy') {
