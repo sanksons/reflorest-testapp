@@ -1,5 +1,4 @@
-pipeline {i
-    
+pipeline {
     agent {
       dockerfile true
     }
