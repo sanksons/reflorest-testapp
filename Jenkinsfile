@@ -11,7 +11,7 @@ pipeline {
         stage('deploy') {
             steps {
                echo "deploying"
-               sh 'reflorest deploy'
+               sh 'go install ./...'
                echo "Finished deploying"
             }
         }
