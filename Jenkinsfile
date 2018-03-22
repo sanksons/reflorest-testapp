@@ -6,8 +6,7 @@ pipeline {
     }
     options {
        skipDefaultCheckout()
-	   cleanWs()
-    }
+	}
     stages {
         stage('test') {
             steps {
@@ -29,8 +28,16 @@ pipeline {
 			   sh 'git checkout master'
 			   sh 'go install ./...'
 			 }
+			 dir('go') {
+             }			 
            }
         }
         
     }
+	post {
+	  always {
+            echo 'One way or another, I have finished'
+            deleteDir() /* clean up our workspace */
+      }
+	}
 }
