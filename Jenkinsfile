@@ -17,6 +17,7 @@ pipeline {
             steps {
               echo "mkdir /gospace/src"
               //sh 'mkdir /gospace/src'
+              sh 'mkdir /gospace/src/myapplication'
               echo "copy application"
               sh 'cp -r . /gospace/src/myapplication/*'
               echo "change cwd"
