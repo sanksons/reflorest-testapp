@@ -1,0 +1,259 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "VPWVP11OJbrTCwnykVUiKH/6D/g=",
+			"path": "github.com/common-nighthawk/go-figure",
+			"revision": "2d3c686981b48f9d6022181dc810381325b16b24",
+			"revisionTime": "2017-04-10T00:05:45Z"
+		},
+		{
+			"checksumSHA1": "sZBC82LlCP+qEu9/4rzKzgfEdIc=",
+			"path": "github.com/hashicorp/golang-lru",
+			"revision": "0fb14efe8c47ae851c0034ed7a448854d3d34cf3",
+			"revisionTime": "2018-02-01T23:52:37Z"
+		},
+		{
+			"checksumSHA1": "BBPs41SjdH2T+Kos+L4KbjmDsJk=",
+			"path": "github.com/hashicorp/golang-lru/simplelru",
+			"revision": "0fb14efe8c47ae851c0034ed7a448854d3d34cf3",
+			"revisionTime": "2018-02-01T23:52:37Z"
+		},
+		{
+			"checksumSHA1": "BulJJMg78LIswbA5LuI3zYnPBF0=",
+			"path": "github.com/imdario/mergo",
+			"revision": "0d4b488675fdec1dde48751b05ab530cf0b630e1",
+			"revisionTime": "2018-01-26T22:59:47Z"
+		},
+		{
+			"checksumSHA1": "ueW7ypBfPBNt0LTUSOZKXTRanYY=",
+			"path": "github.com/ooyala/go-dogstatsd",
+			"revision": "23f2a1659b0203cd76910e56cd4e6394f14a5cbb",
+			"revisionTime": "2014-09-22T21:44:59Z"
+		},
+		{
+			"checksumSHA1": "CxmoUGOrNvO41V/hi1k5kQyTBTU=",
+			"path": "github.com/sanksons/reflorest/src/common/collections",
+			"revision": "636fd32557d4174488c3d2dfbd44262c670b17d1",
+			"revisionTime": "2018-03-21T06:38:22Z"
+		},
+		{
+			"checksumSHA1": "5FafFJcwRPkeRMKXVPURd8p9qiA=",
+			"path": "github.com/sanksons/reflorest/src/common/collections/maps/concurrentmap/concurrenthashmap",
+			"revision": "636fd32557d4174488c3d2dfbd44262c670b17d1",
+			"revisionTime": "2018-03-21T06:38:22Z"
+		},
+		{
+			"checksumSHA1": "9vF6sA445H3KNxH3UC9/sBo/1sM=",
+			"path": "github.com/sanksons/reflorest/src/common/collections/stack",
+			"revision": "636fd32557d4174488c3d2dfbd44262c670b17d1",
+			"revisionTime": "2018-03-21T06:38:22Z"
+		},
+		{
+			"checksumSHA1": "jM8F23H4brU8KLOrEw2TlS3F+y8=",
+			"path": "github.com/sanksons/reflorest/src/common/collections/utils",
+			"revision": "636fd32557d4174488c3d2dfbd44262c670b17d1",
+			"revisionTime": "2018-03-21T06:38:22Z"
+		},
+		{
+			"checksumSHA1": "h5AWRm/2TqTEljzeB9S74TNBbRc=",
+			"path": "github.com/sanksons/reflorest/src/common/collections/utils/comparators",
+			"revision": "636fd32557d4174488c3d2dfbd44262c670b17d1",
+			"revisionTime": "2018-03-21T06:38:22Z"
+		},
+		{
+			"checksumSHA1": "ShiQ9yHgIuiCb/TavZ0ttjg2hwY=",
+			"path": "github.com/sanksons/reflorest/src/common/config",
+			"revision": "636fd32557d4174488c3d2dfbd44262c670b17d1",
+			"revisionTime": "2018-03-21T06:38:22Z"
+		},
+		{
+			"checksumSHA1": "VLcOXkXbYhZUUifLBk+rXe68Z4A=",
+			"path": "github.com/sanksons/reflorest/src/common/constants",
+			"revision": "636fd32557d4174488c3d2dfbd44262c670b17d1",
+			"revisionTime": "2018-03-21T06:38:22Z"
+		},
+		{
+			"checksumSHA1": "+bf7SwnXIkbG1TQP6LMziQTNLhk=",
+			"path": "github.com/sanksons/reflorest/src/common/logger",
+			"revision": "636fd32557d4174488c3d2dfbd44262c670b17d1",
+			"revisionTime": "2018-03-21T06:38:22Z"
+		},
+		{
+			"checksumSHA1": "tBmK5sbh2ycAKo6iCPUqYsncVKg=",
+			"path": "github.com/sanksons/reflorest/src/common/logger/formatter",
+			"revision": "636fd32557d4174488c3d2dfbd44262c670b17d1",
+			"revisionTime": "2018-03-21T06:38:22Z"
+		},
+		{
+			"checksumSHA1": "jdsPL9q5W9yv2+9jDCINnowxM4A=",
+			"path": "github.com/sanksons/reflorest/src/common/logger/impls",
+			"revision": "636fd32557d4174488c3d2dfbd44262c670b17d1",
+			"revisionTime": "2018-03-21T06:38:22Z"
+		},
+		{
+			"checksumSHA1": "Cu9NN9d606dnLYpeQFiVb+p2/yA=",
+			"path": "github.com/sanksons/reflorest/src/common/logger/message",
+			"revision": "636fd32557d4174488c3d2dfbd44262c670b17d1",
+			"revisionTime": "2018-03-21T06:38:22Z"
+		},
+		{
+			"checksumSHA1": "QgXHOHCZMes8cgL6DCxE/Y4bHx0=",
+			"path": "github.com/sanksons/reflorest/src/common/logger/writers",
+			"revision": "636fd32557d4174488c3d2dfbd44262c670b17d1",
+			"revisionTime": "2018-03-21T06:38:22Z"
+		},
+		{
+			"checksumSHA1": "kkN961amX4HXkt2XsdtVWWij4eQ=",
+			"path": "github.com/sanksons/reflorest/src/common/logger/writers/filewriter",
+			"revision": "636fd32557d4174488c3d2dfbd44262c670b17d1",
+			"revisionTime": "2018-03-21T06:38:22Z"
+		},
+		{
+			"checksumSHA1": "4VjI3TwycRotZ85tfZk1JxOhZOY=",
+			"path": "github.com/sanksons/reflorest/src/common/logger/writers/stdoutwriter",
+			"revision": "636fd32557d4174488c3d2dfbd44262c670b17d1",
+			"revisionTime": "2018-03-21T06:38:22Z"
+		},
+		{
+			"checksumSHA1": "DAbGVBpav2Tz2Uab0EDa70Xzxsk=",
+			"path": "github.com/sanksons/reflorest/src/common/monitor",
+			"revision": "636fd32557d4174488c3d2dfbd44262c670b17d1",
+			"revisionTime": "2018-03-21T06:38:22Z"
+		},
+		{
+			"checksumSHA1": "X7YKq4VU/N/Wg6Te/nFUPxEmjP0=",
+			"path": "github.com/sanksons/reflorest/src/common/profiler",
+			"revision": "636fd32557d4174488c3d2dfbd44262c670b17d1",
+			"revisionTime": "2018-03-21T06:38:22Z"
+		},
+		{
+			"checksumSHA1": "Fs+Ebu9FCm5iwPveUjuFsLD8DVE=",
+			"path": "github.com/sanksons/reflorest/src/common/ratelimiter",
+			"revision": "636fd32557d4174488c3d2dfbd44262c670b17d1",
+			"revisionTime": "2018-03-21T06:38:22Z"
+		},
+		{
+			"checksumSHA1": "d4UpCFR7bPpw3vBYsT34QIHHNcs=",
+			"path": "github.com/sanksons/reflorest/src/common/utils/http",
+			"revision": "636fd32557d4174488c3d2dfbd44262c670b17d1",
+			"revisionTime": "2018-03-21T06:38:22Z"
+		},
+		{
+			"checksumSHA1": "IfvGCImrltSKpDa3ya8ZbQQJIfI=",
+			"path": "github.com/sanksons/reflorest/src/common/utils/misc",
+			"revision": "636fd32557d4174488c3d2dfbd44262c670b17d1",
+			"revisionTime": "2018-03-21T06:38:22Z"
+		},
+		{
+			"checksumSHA1": "AnQr5vkhYd3B3whn+i2zirX4Nm0=",
+			"path": "github.com/sanksons/reflorest/src/components/cache",
+			"revision": "636fd32557d4174488c3d2dfbd44262c670b17d1",
+			"revisionTime": "2018-03-21T06:38:22Z"
+		},
+		{
+			"checksumSHA1": "Nd+hSSUbYMI6zaqYZu3vKXpw7YA=",
+			"path": "github.com/sanksons/reflorest/src/core/common/env",
+			"revision": "636fd32557d4174488c3d2dfbd44262c670b17d1",
+			"revisionTime": "2018-03-21T06:38:22Z"
+		},
+		{
+			"checksumSHA1": "USc1SnZjqul2ZK0jMBlYEoQ+p7s=",
+			"path": "github.com/sanksons/reflorest/src/core/common/orchestrator",
+			"revision": "636fd32557d4174488c3d2dfbd44262c670b17d1",
+			"revisionTime": "2018-03-21T06:38:22Z"
+		},
+		{
+			"checksumSHA1": "cDGadacEYp4ndZU3D1+820LVPCs=",
+			"path": "github.com/sanksons/reflorest/src/core/common/utils/healthcheck",
+			"revision": "636fd32557d4174488c3d2dfbd44262c670b17d1",
+			"revisionTime": "2018-03-21T06:38:22Z"
+		},
+		{
+			"checksumSHA1": "IIOwhUgPmzJ/UO4msp6mP+OpMSk=",
+			"path": "github.com/sanksons/reflorest/src/core/common/utils/misc",
+			"revision": "636fd32557d4174488c3d2dfbd44262c670b17d1",
+			"revisionTime": "2018-03-21T06:38:22Z"
+		},
+		{
+			"checksumSHA1": "KTHQ5SVPQy6EJkoS3nMVhRh29ik=",
+			"path": "github.com/sanksons/reflorest/src/core/common/utils/orchestratorhelper",
+			"revision": "636fd32557d4174488c3d2dfbd44262c670b17d1",
+			"revisionTime": "2018-03-21T06:38:22Z"
+		},
+		{
+			"checksumSHA1": "8yWgIVPjV4/9/2i2OOZHcWNsozk=",
+			"path": "github.com/sanksons/reflorest/src/core/common/utils/responseheaders",
+			"revision": "636fd32557d4174488c3d2dfbd44262c670b17d1",
+			"revisionTime": "2018-03-21T06:38:22Z"
+		},
+		{
+			"checksumSHA1": "oAXg6UbcdRiQOooq4VUmPgzfRbk=",
+			"path": "github.com/sanksons/reflorest/src/core/common/versionmanager",
+			"revision": "636fd32557d4174488c3d2dfbd44262c670b17d1",
+			"revisionTime": "2018-03-21T06:38:22Z"
+		},
+		{
+			"checksumSHA1": "oPfDqwQCQxpoJMm5u4cJJ7m7/kA=",
+			"path": "github.com/sanksons/reflorest/src/core/service",
+			"revision": "636fd32557d4174488c3d2dfbd44262c670b17d1",
+			"revisionTime": "2018-03-21T06:38:22Z"
+		},
+		{
+			"checksumSHA1": "Ux7lAXflraYxwPStRXYKB67SmkQ=",
+			"path": "github.com/twinj/uuid",
+			"revision": "7bbe408d339787c56ec15568c947c0959db1b275",
+			"revisionTime": "2016-09-09T07:54:38Z"
+		},
+		{
+			"checksumSHA1": "lzxr2rdWylya6Z5Ft4oA0Fvr4TU=",
+			"path": "gopkg.in/bsm/ratelimit.v1",
+			"revision": "db14e161995a5177acef654cb0dd785e8ee8bc22",
+			"revisionTime": "2016-02-20T15:49:07Z"
+		},
+		{
+			"checksumSHA1": "c90H50M5KL1pnQHLciystvJy/kA=",
+			"path": "gopkg.in/redis.v3",
+			"revision": "b5e368500d0a508ef8f16e9c2d4025a8a46bcc29",
+			"revisionTime": "2016-06-27T09:56:34Z"
+		},
+		{
+			"checksumSHA1": "0prkBFC4Lp0sdCfgwLB+bJ0DaEk=",
+			"path": "gopkg.in/redis.v3/internal",
+			"revision": "b5e368500d0a508ef8f16e9c2d4025a8a46bcc29",
+			"revisionTime": "2016-06-27T09:56:34Z"
+		},
+		{
+			"checksumSHA1": "ATGOOqBwHYpCi2uFNg2gphF3R0A=",
+			"path": "gopkg.in/redis.v3/internal/consistenthash",
+			"revision": "b5e368500d0a508ef8f16e9c2d4025a8a46bcc29",
+			"revisionTime": "2016-06-27T09:56:34Z"
+		},
+		{
+			"checksumSHA1": "fInEs5ZvfrgfiTwzDkZqg5/YpWQ=",
+			"path": "gopkg.in/redis.v3/internal/hashtag",
+			"revision": "b5e368500d0a508ef8f16e9c2d4025a8a46bcc29",
+			"revisionTime": "2016-06-27T09:56:34Z"
+		},
+		{
+			"checksumSHA1": "eqnpt/FuuzmtK5gEWpsAMQPGIsY=",
+			"path": "gopkg.in/redis.v3/internal/pool",
+			"revision": "b5e368500d0a508ef8f16e9c2d4025a8a46bcc29",
+			"revisionTime": "2016-06-27T09:56:34Z"
+		},
+		{
+			"checksumSHA1": "C1hwwKqgYGtrNNmK11j4qCjxM4U=",
+			"path": "gopkg.in/throttled/throttled.v2",
+			"revision": "aeea1c7338e6dd1e1b309afe07fb7bbcfa83c2fa",
+			"revisionTime": "2018-03-21T14:03:52Z"
+		},
+		{
+			"checksumSHA1": "guYyPZKRlH5lY9ou//2S5bBRdqM=",
+			"path": "gopkg.in/throttled/throttled.v2/store/memstore",
+			"revision": "aeea1c7338e6dd1e1b309afe07fb7bbcfa83c2fa",
+			"revisionTime": "2018-03-21T14:03:52Z"
+		}
+	],
+	"rootPath": "github.com/sanksons/reflorest-testapp"
+}

@@ -12,6 +12,7 @@ pipeline {
             steps {
                echo "deploying"
                sh 'reflorest deploy'
+               echo "Finished deploying"
             }
         }
     }
