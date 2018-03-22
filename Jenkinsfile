@@ -15,18 +15,17 @@ pipeline {
         }
         stage('prebuild') {
            steps { 
-             dir('/gospace/src') {
-               // some blocki
+		     echo "Mkdir go/src/github.com/sanksons"
+			 sh 'mkdir -p go/src/github.com/sanksons'
+             dir('go/src/github.com/sanksons') {
+               // take checkout
                checkout changelog: false, poll: false, scm: [$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/sanksons/reflorest-testapp.git']]]
              }
+			 dir('go/src/github.com/sanksons/reflorest-testapp') {
+			   sh 'go install ./...'
+			 }
            }
         }
-        stage('deploy') {
-            steps {
-               echo "deploying"
-               sh 'go install ./...'
-               echo "Finished deploying"
-            }
-        }
+        
     }
 }
