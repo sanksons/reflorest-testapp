@@ -20,9 +20,10 @@ pipeline {
 			 sh 'mkdir -m 777 -p go/src/github.com/sanksons@tmp'
              dir('go/src/github.com/sanksons') {
                // take checkout
-			   sh 'git checkout https://github.com/sanksons/reflorest-testapp.git'
-             }
+			   sh 'git clone https://github.com/sanksons/reflorest-testapp.git'
+			 }
 			 dir('go/src/github.com/sanksons/reflorest-testapp') {
+			   sh 'git checkout master'
 			   sh 'go install ./...'
 			 }
            }
