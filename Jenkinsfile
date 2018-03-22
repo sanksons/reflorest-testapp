@@ -14,19 +14,12 @@ pipeline {
             }
         }
         stage('prebuild') {
-            steps {
-              echo "mkdir /gospace/src"
-              //sh 'mkdir /gospace/src'
-              sh 'mkdir /gospace/src/myapplication'
-              echo "copy application"
-              sh 'cp -r . /gospace/src/myapplication/*'
-              echo "change cwd"
-              sh 'cd /gospace/src/myapplication'
-              echo "PWD:"
-              sh 'pwd'
-              //sh 'export GOPATH=$(pwd)'
-              echo "gopath is : $GOPATH"
-            }
+           steps { 
+             dir('/gospace/src') {
+               // some blocki
+               checkout changelog: false, poll: false, scm: [$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/sanksons/reflorest-testapp.git']]]
+             }
+           }
         }
         stage('deploy') {
             steps {
