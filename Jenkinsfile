@@ -6,6 +6,7 @@ pipeline {
     }
     options {
        skipDefaultCheckout()
+	   cleanWs()
     }
     stages {
         stage('test') {
