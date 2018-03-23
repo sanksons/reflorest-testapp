@@ -1,43 +1,43 @@
 pipeline {
-    agent {
-      dockerfile {
-        args  '-u 0:0'
-      }
+    agent any
+    environment {
+        // Some environment variables to be used later
+        ARTIFACTPATH = "output"
+        OUTPUT = "bundle.tar.gz"
     }
-    options {
-       skipDefaultCheckout()
-	}
     stages {
-        stage('test') {
-            steps {
-                echo "Running tests"
+	    stage ('checkout') {
+		  steps {
+                git branch: 'master', url: 'https://github.com/sanksons/reflorest-testapp.git'
             }
-        }
-        stage('prebuild') {
-           steps { 
-		     echo "Mkdir go/src/github.com/sanksons"
-			 sh 'mkdir -m 777 -p go/src/github.com/sanksons'
-			 sh 'mkdir -m 777 -p go/src/github.com/sanksons@tmp'
-             dir('go/src/github.com/sanksons') {
-               // take checkout
-			   sh 'git clone https://github.com/sanksons/reflorest-testapp.git'
-			   
-			 }
-			 dir('go/src/github.com/sanksons/reflorest-testapp') {
-			   sh 'mkdir -m 777 -p reflorest-testapp@tmp'
-			   sh 'git checkout master'
-			   sh 'go install ./...'
-			 }
-			 dir('go') {
-             }			 
-           }
-        }
+		}
+	    stage('prebuild') {
+		   agent {
+                docker {
+	               image 'sanksons/go1.9-ubuntu:initial'
+		           args '-u 0:0 -v /home/sab/.jenkins/workspace/reflotest-test2:/gospace/src/github.com/sanksons/reflorest-testapp:rw,z  -w /gospace/src/github.com/sanksons/reflorest-testapp'
+		           reuseNode true
+	            }
+            }
+            steps {    
+                   	sh 'pwd'
+				     sh 'ls -lahrt'
+					 // need to see why dir not works??
+					 sh 'cd /gospace/src/github.com/sanksons/reflorest-testapp && reflorest deploy'
+					 sh 'pwd'
+					 echo "See whats in bin"
+					 sh 'ls -lahrt /gospace/bin'
+					 sh 'rm -rf $ARTIFACTPATH'
+                     sh 'mkdir -p $ARTIFACTPATH'
+					 sh 'cp -r /gospace/bin/conf $ARTIFACTPATH/ && cp /gospace/bin/reflorest-testapp $ARTIFACTPATH/'
+					 
+				   }
+		}
+		stage('bundle') {
+		   sh 'cd output && tar czf $OUTPUT *'
+		   archiveArtifacts "${env.ARTIFACTPATH}/*"
+		}
+		
         
     }
-	post {
-	  always {
-            echo 'One way or another, I have finished'
-            deleteDir() /* clean up our workspace */
-      }
-	}
 }
