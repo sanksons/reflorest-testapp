@@ -1,0 +1,15 @@
+{
+    "ProfilerEnabled": true,
+    "LogLevel": 2,
+    "DefaultLogType": "fileLoggerDefault",
+    "AppName" : "reflorest-testapp-",
+    "Write2Console" : true,
+    "FileLogger": [
+        {
+            "Key": "fileLoggerDefault",
+            "Path": "C:\\reflorest-testapp\\",
+            "FormatType" : "json",
+            "FileNamePrefix": "api-"       
+        }       
+    ]
+}
