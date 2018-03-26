@@ -1,43 +1,57 @@
 pipeline {
-    agent any
+	agent {
+		docker {
+			image 'sanksons/go1.9-ubuntu:initial'
+			args '-u 0:0'
+			reuseNode true
+		}
+	}
     environment {
         // Some environment variables to be used later
         ARTIFACTPATH = "output"
         OUTPUT = "bundle.tar.gz"
-    }
+		PROJECT_NAME = "reflorest-testapp"
+		PROJECT_PATH = "github.com/sanksons"
+	}
     stages {
+	
+	    //Take checkout from source control 
 	    stage ('checkout') {
-		  steps {
-                git branch: 'master', url: 'https://github.com/sanksons/reflorest-testapp.git'
+			steps {
+				// mkdir where we will take checkout of source code.
+				dir("sourcecode") {
+					git branch: 'master', url: 'https://github.com/sanksons/reflorest-testapp.git'
+				}
             }
-		}
-	    stage('prebuild') {
-		   agent {
-                docker {
-	               image 'sanksons/go1.9-ubuntu:initial'
-		           args '-u 0:0 -v /home/sab/.jenkins/workspace/reflotest-test2:/gospace/src/github.com/sanksons/reflorest-testapp:rw,z  -w /gospace/src/github.com/sanksons/reflorest-testapp'
-		           reuseNode true
-	            }
-            }
-            steps {    
-                   	sh 'pwd'
-				     sh 'ls -lahrt'
-					 // need to see why dir not works??
-					 sh 'cd /gospace/src/github.com/sanksons/reflorest-testapp && reflorest deploy'
-					 sh 'pwd'
-					 echo "See whats in bin"
-					 sh 'ls -lahrt /gospace/bin'
-					 sh 'rm -rf $ARTIFACTPATH'
-                     sh 'mkdir -p $ARTIFACTPATH'
-					 sh 'cp -r /gospace/bin/conf $ARTIFACTPATH/ && cp /gospace/bin/reflorest-testapp $ARTIFACTPATH/'
-					 
-				   }
-		}
-		stage('bundle') {
-		   sh 'cd output && tar czf $OUTPUT *'
-		   archiveArtifacts "${env.ARTIFACTPATH}/*"
 		}
 		
-        
-    }
+		//Build project
+	    stage('build') {
+		    steps { 
+				// copy contents from checkout out source code to gopath
+				sh 'mkdir -p $GOPATH/src/$PROJECT_PATH'
+				sh 'cp -r $WORKSPACE/sourcecode $GOPATH/src/$PROJECT_PATH/$PROJECT_NAME'	
+				
+				sh 'ls -lahrt $GOPATH/src/$PROJECT_PATH/$PROJECT_NAME'
+					
+				//Move inside project location and run deploy
+				sh 'cd $GOPATH/src/$PROJECT_PATH/$PROJECT_NAME && reflorest deploy'
+					 
+			}
+		}
+		
+		//Bundle data
+		stage('bundle') {
+		   steps {
+		        //Copy the required files from bin to output folder
+				sh 'rm -rf $ARTIFACTPATH'
+                sh 'mkdir -p $ARTIFACTPATH'
+				sh 'cp -r /gospace/bin/conf $ARTIFACTPATH/ && cp /gospace/bin/reflorest-testapp $ARTIFACTPATH/'
+					
+			    //Bundle archive.
+     		    sh 'cd output && tar czf $OUTPUT *'
+		        archiveArtifacts "${env.ARTIFACTPATH}/*"	  
+			}
+		}
+	}
 }
