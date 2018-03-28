@@ -2,15 +2,14 @@ package hello_test
 
 import (
 	"fmt"
-	"os"
 	"testing"
 
 	gk "github.com/onsi/ginkgo"
 	gm "github.com/onsi/gomega"
 
 	service "github.com/sanksons/reflorest-testapp/src/common"
-	"github.com/sanksons/reflorest-testapp/test_tools/fakers/webserver"
 	reflorestservice "github.com/sanksons/reflorest/src/core/service"
+	webserver "github.com/sanksons/reflorest/src/testtools/fakers/webserver"
 )
 
 var testHTTPServer *webserver.TestWebserver
@@ -21,11 +20,11 @@ func TestHelloAPI(t *testing.T) {
 }
 
 var _ = gk.BeforeSuite(func() {
-	//os.Setenv("REFLOREST_APP_MODE", reflorestservice.MODE_TEST)
-	reflorestservice.AppMode = reflorestservice.MODE_TEST
-	fmt.Println(os.Getenv("REFLOREST_APP_MODE"))
+	//Set the APPlication to run in test mode
+	reflorestservice.SetAppMode(reflorestservice.MODE_TEST)
 	fmt.Println("Starting webserver")
 	service.Register()
+
 	//@todo: need to set init manager in reflorest so that its not needed to be set here explicitely.
 	initMgr := new(reflorestservice.InitManager)
 	initMgr.Execute()
@@ -33,7 +32,7 @@ var _ = gk.BeforeSuite(func() {
 })
 
 var _ = gk.AfterSuite(func() {
-	os.Setenv("REFLOREST_APP_MODE", "")
+	//No Need to revert the App Mode.
 	fmt.Println("Crashing webserver")
 	testHTTPServer = nil
 })
